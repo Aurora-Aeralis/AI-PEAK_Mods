@@ -1,0 +1,66 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- Project properties -->
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <AssemblyName>PeakGrandTour</AssemblyName>
+    <AssemblyTitle>Peak Grand Tour</AssemblyTitle>
+    <Version>1.0.0</Version>
+  </PropertyGroup>
+
+  <!-- ThunderPipe properties -->
+  <PropertyGroup>
+    <IsThunderstorePackable>true</IsThunderstorePackable>
+    <ThunderstoreName>PeakGrandTour</ThunderstoreName>
+    <ThunderstoreDescription>Forces PEAK runs into a fixed all-biomes Grand Tour route.</ThunderstoreDescription>
+    <ThunderstoreCommunities>peak</ThunderstoreCommunities>
+    <ThunderstoreCategories>mods</ThunderstoreCategories>
+  </PropertyGroup>
+
+  <!--
+    Define mod files to copy to the relative BepInEx directory after build
+    and where they are packed to when building a Thunderstore package
+  -->
+  <ItemGroup>
+    <!-- TargetPath is the dll file produced during build. -->
+    <ModFile Include="$(TargetPath)" Destination="plugins/" />
+    <!--
+      If your project needs additional files, e.g. asset bundles,
+      you can add them here. Example:
+
+      <ModFile Include="./Assets/bundle" Destination="plugins/" />
+    -->
+  </ItemGroup>
+
+  <!-- Thunderstore package metadata -->
+  <ItemGroup>
+    <ThunderstorePackageFile Include="$(SolutionRoot)README.md" />
+    <ThunderstorePackageFile Include="$(SolutionRoot)CHANGELOG.md" />
+    <ThunderstorePackageFile Include="$(SolutionRoot)icon.png" />
+    <ThunderstorePackageFile Include="$(SolutionRoot)LICENSE" />
+
+    <!--
+      A list of Thunderstore packages this package requires at runtime.
+      Note: This does NOT mark these as dependencies for this C# project;
+            that must be done separately with PackageReference items.
+    -->
+    <ThunderstoreDependency Include="BepInEx-BepInExPack_PEAK" Version="5.4.75301" />
+  </ItemGroup>
+
+  <!--
+    To reference mod assemblies from Thunderstore packages via NuGet,
+    this project includes the following NuGet feed:
+    https://nuget.windows10ce.com/nuget/v3/index.json
+
+    With this, you can simply depend on a Thunderstore package like so:
+
+    <ItemGroup>
+      <PackageReference Include="ModTeam-ModName" Version="*" />
+    </ItemGroup>
+
+    This will cause the mod to be downloaded and its
+    methods will be available at compile time for your code.
+
+    Note that this does NOT mark the package as a dependency
+    for your Thunderstore package.
+  -->
+</Project>

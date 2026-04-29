@@ -1,0 +1,5 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/GhostOnlyVoice/GhostOnlyVoice.csproj" />
+  </Folder>
+</Solution>

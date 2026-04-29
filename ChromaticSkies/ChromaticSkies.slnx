@@ -1,0 +1,5 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/ChromaticSkies/ChromaticSkies.csproj" />
+  </Folder>
+</Solution>

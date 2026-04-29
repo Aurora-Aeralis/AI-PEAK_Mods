@@ -1,0 +1,5 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/PeakGrandTour/PeakGrandTour.csproj" />
+  </Folder>
+</Solution>

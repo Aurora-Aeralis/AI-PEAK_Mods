@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <AssemblyName>ScoutmasterGroupPressure</AssemblyName>
+    <AssemblyTitle>Scoutmaster Group Pressure</AssemblyTitle>
+    <RootNamespace>AeralisFoundation.ScoutmasterGroupPressure</RootNamespace>
+    <Version>0.1.0</Version>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <IsThunderstorePackable>true</IsThunderstorePackable>
+    <ThunderstoreName>ScoutmasterGroupPressure</ThunderstoreName>
+    <ThunderstoreDescription>Lets PEAK's scoutmaster punish two-player runaway groups by comparing leading scouts against the third-highest living scout.</ThunderstoreDescription>
+    <ThunderstoreCommunities>peak</ThunderstoreCommunities>
+    <ThunderstoreCategories>mods</ThunderstoreCategories>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ModFile Include="$(TargetPath)" Destination="plugins/" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ThunderstorePackageFile Include="$(SolutionRoot)README.md" />
+    <ThunderstorePackageFile Include="$(SolutionRoot)CHANGELOG.md" />
+    <ThunderstorePackageFile Include="$(SolutionRoot)icon.png" />
+    <ThunderstorePackageFile Include="$(SolutionRoot)LICENSE" />
+    <ThunderstoreDependency Include="BepInEx-BepInExPack_PEAK" Version="5.4.75301" />
+  </ItemGroup>
+</Project>

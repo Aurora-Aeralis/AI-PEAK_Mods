@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- Project properties -->
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <AssemblyName>AeralisFoundation.SplitVitals</AssemblyName>
+    <AssemblyTitle>SplitVitals</AssemblyTitle>
+    <Version>1.0.0</Version>
+  </PropertyGroup>
+
+  <!-- ThunderPipe properties -->
+  <PropertyGroup>
+    <IsThunderstorePackable>true</IsThunderstorePackable>
+    <ThunderstoreName>SplitVitals</ThunderstoreName>
+    <ThunderstoreDescription>Separates PEAK status pressure from stamina with a dedicated health bar.</ThunderstoreDescription>
+    <ThunderstoreCommunities>peak</ThunderstoreCommunities>
+    <ThunderstoreCategories>mods</ThunderstoreCategories>
+  </PropertyGroup>
+
+  <!--
+    Define mod files to copy to the relative BepInEx directory after build
+    and where they are packed to when building a Thunderstore package
+  -->
+  <ItemGroup>
+    <ModFile Include="$(TargetPath)" Destination="plugins/" />
+  </ItemGroup>
+
+  <!-- Thunderstore package metadata -->
+  <ItemGroup>
+    <ThunderstorePackageFile Include="$(SolutionRoot)README.md" />
+    <ThunderstorePackageFile Include="$(SolutionRoot)CHANGELOG.md" />
+    <ThunderstorePackageFile Include="$(SolutionRoot)icon.png" />
+    <ThunderstorePackageFile Include="$(SolutionRoot)LICENSE" />
+
+    <ThunderstoreDependency Include="BepInEx-BepInExPack_PEAK" Version="5.4.75301" />
+  </ItemGroup>
+</Project>
